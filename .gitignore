@@ -1,0 +1,34 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+backend/venv/
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+
+# Database
+*.db
