@@ -16,6 +16,7 @@ app.include_router(
 @app.get("/")
 def home():
     return {
+       # "api_key_loaded": bool(settings.GEMINI_API_KEY)
         "app_name": settings.APP_NAME,
         "version": settings.APP_VERSION
     }
