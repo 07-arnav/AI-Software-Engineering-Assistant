@@ -1,18 +1,16 @@
 from fastapi import APIRouter
+
 from app.ai.gemini import llm
+from app.schemas.chat import ChatRequest, ChatResponse
 
 router = APIRouter()
 
-@router.get("/chat")
-def chat():
-    try:
-        response = llm.invoke("Say only: Hello Arnav")
-        return {
-            "response": response.text()
-        }
 
-    except Exception as e:
-        return {
-            "error": str(e),
-            "error_type": type(e).__name__
-        }
+@router.post("/chat", response_model=ChatResponse)
+def chat(request: ChatRequest):
+
+    response = llm.invoke(request.message)
+
+    return ChatResponse(
+        response=response.text
+    )
